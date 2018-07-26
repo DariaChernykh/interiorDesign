@@ -9,16 +9,38 @@ body{
   width: 1360px;
   margin: 0 auto;
 }
+
 header{
   max-width: 100%;
   position: relative;
-
+  background-color: #fdfaf3;
 }
+
 header::after{
   content:'+7 (800) 823 48 88';
   position: absolute;
   top: 30px;
   right: 95px;
+}
+
+@font-face {
+  font-family: 'MullerLight';
+  src: url("../fonts/Fontfabric - MullerLight.otf") format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+section{
+  background-color: #fdfaf3;
+}
+
+h2{
+  margin: 0;
+}
+
+ul{
+  margin: 0;
+  list-style: none;
 }
 
 .header__background{
@@ -31,7 +53,6 @@ header::after{
 
   background: url("../img/d-background-image.jpg") 0 0 no-repeat;
   background-size: cover;
-  z-index: -1;
 }
 
 .header__content{
@@ -45,6 +66,7 @@ header::after{
 
   color: #ffffff;
   background-color: rgba(17, 37, 55, .97);
+  z-index: 1;
 }
 
 .header__logo{
@@ -62,6 +84,27 @@ header::after{
   font-size: 60px;
 }
 
+.header__description{
+  font-family: 'MullerLight', serif;
+  font-size: 14px;
+}
+
+.button{
+  width: 277px;
+  height: 56px;
+  box-sizing: border-box;
+  padding: 20px 30px;
+
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: left;
+
+  border: none;
+  background-color: #f8a25a;
+  box-shadow: 4px 7px 20px 8px rgba(0, 1, 6, 0.06);
+}
+
 .header__menu{
   display: none;
   margin-right: auto;
@@ -69,6 +112,55 @@ header::after{
 }
 
 .pre{
+  width: 100%;
+  min-height: 500px;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 30px 95px;
+  margin: 0;
+  counter-reset: myCounter;
+}
+
+.pre li{
+  width: 260px;
+  list-style: none;
+  line-height: 20px;
+}
+
+.pre li:nth-child(even){
+  align-self: flex-end;
+}
+
+.pre li:before {
+  counter-increment: myCounter;
+  content: counter(myCounter);
+  color: rgba(254, 160, 82, 0.26);
+  display: inline-block;
+  text-align: center;
+  line-height: normal;
+  height: auto;
+  width: auto;
+  margin: 0 10px 0 0;
+  padding: 0 8px;
+
+  font-family: 'Playfair Display SC', serif;
+  font-size: 85px;
+}
+
+.main-caption{
+  font-family: 'Playfair Display SC', serif;
+  font-size: 45px;
+
+  color: #00203a;
+}
+
+.portfolio{
+  padding: 30px 95px;
+}
+
+.portfolio__list{
+  display: flex;
   padding: 0;
-  list-style: -moz-ethiopic-numeric;
 }
