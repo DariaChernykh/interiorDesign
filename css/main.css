@@ -76,7 +76,7 @@ ul{
 }
 
 .header__wrapper{
-  margin-left: 190px;
+  margin: 0 125px 0 190px;
 }
 
 .header__caption{
@@ -156,11 +156,80 @@ ul{
   color: #00203a;
 }
 
-.portfolio{
+.portfolio,
+.services{
   padding: 30px 95px;
+
+  color: #7d7d7d;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .portfolio__list{
   display: flex;
   padding: 0;
+}
+
+.services{
+  position: absolute;
+}
+
+.services__list{
+  display: inline-block;
+  width: 190px;
+  padding: 0 100px 0 0;
+}
+
+.services__item{
+  padding: 40px 0;
+}
+
+.services__content{
+  width: 875px;
+  display: inline-block;
+}
+
+.services__photo{
+  position: relative;
+}
+/*можно решить джсом или переделать привязку (не на картинку)*/
+.services__photo::after{
+  content: '532 проекта';
+  position: absolute;
+  width:50px;
+  height: 40px;
+  right: 0;
+  bottom: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  color: #182c3d;
+}
+
+.services__text{
+  width: 485px;
+}
+
+.services__caption{
+  display: inline-block;
+  padding-top: 60px;
+
+  font-size: 30px;
+  color: #112537;
+  font-family: 'Playfair Display SC', serif;
+}
+
+.services__button{
+  width: 215px;
+  height: 55px;
+  position: absolute;
+  right: 95px;
+  bottom: 65px;
+
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: #112537;
+  text-transform: uppercase;
+  border: solid 2px #112537;
+  background-color: #fdfaf3;
 }
