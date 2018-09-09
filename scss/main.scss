@@ -158,60 +158,118 @@ ul {
 }
 
 .portfolio,
-.services{
-  padding: 30px 95px;
+.services {
+  padding: 0 90px 120px;
 
   color: #7d7d7d;
   font-size: 18px;
   font-family: 'Raleway', sans-serif;
 }
 
-.portfolio__list{
-  display: flex;
-  padding: 0;
+.portfolio {
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 10px 0 40px;
+  }
+
+  &__item {
+    margin-right: 60px;
+
+    &-active{
+      position: relative;
+      color: #00203a;
+      font-weight: 600;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: #00203a;
+        bottom: -5px;
+        left: 0;
+      }
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    height: 555px;
+    background-color: rgba(255, 0, 0, 0.29);
+  }
 }
 
-.services{
-  position: absolute;
+.services {
+  display: flex;
+  flex-wrap: wrap;
 
-  &__list{
-    display: inline-block;
-    width: 190px;
-    padding: 0 100px 0 0;
+  &-caption {
+    width: 100%;
+    margin-bottom: 70px;
   }
 
-  &__item{
-    padding: 40px 0;
-  }
-
-  &__content{
+  &__content {
     width: 875px;
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
-  &__photo{
-    position: relative;
+  &__list {
+    flex: 1 1 auto;
+    width: 225px;
+    padding: 0;
+    margin-right: 50px;
+  }
 
-    &::after{
-      content: '532 проекта';
-      position: absolute;
-      width: 50px;
-      height: 40px;
-      right: 0;
-      bottom: 30px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 18px;
-      color: #182c3d;
+  &__item {
+    padding: 0 0 80px;
+
+    &:last-child {
+      padding-bottom: 40px;
     }
+
+    &-active {
+      padding-left: 25px;
+      font-weight: 600;
+      color: #00203a;
+    }
+  }
+
+  &__photo {
+    margin-bottom: 60px;
+  }
+
+  &__wrapper {
+    max-height: 200px;
+
+    &-left {
+      width: 60%;
+    }
+
+    &-right {
+      width: 30%;
+      text-align: right;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+  &__projects {
+    margin: 0;
   }
 
   &__text{
     width: 485px;
+    line-height: 30px;
   }
 
-  &__caption{
+  &__subcaption{
     display: inline-block;
-    padding-top: 60px;
+    margin: 0;
 
     font-size: 30px;
     color: #112537;
@@ -221,9 +279,6 @@ ul {
   &__button{
     width: 215px;
     height: 55px;
-    position: absolute;
-    right: 95px;
-    bottom: 65px;
 
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
@@ -232,5 +287,90 @@ ul {
     text-transform: uppercase;
     border: solid 2px #112537;
     background-color: #fdfaf3;
+  }
+}
+
+.article {
+  width: 100%;
+  height: 595px;
+  position: relative;
+  background-size: cover;
+  background: url("../img/d-background-image3.jpg") no-repeat;
+  background-color: rgba(17, 37, 55, .6);
+  background-blend-mode: multiply;
+
+  font-size: 13px;
+  font-family: "Raleway";
+  color: rgb(255, 255, 255);
+  line-height: 650px;
+  text-align: center;
+
+  &::before {
+    content: '';
+    width: 110px;
+    height: 110px;
+    background: url("../img/play.png") no-repeat;
+    position: absolute;
+    top: 35%;
+    left: calc(50% - 55px);
+    cursor: pointer;
+  }
+
+  &__text {
+    margin: 0;
+  }
+}
+
+.stages {
+  padding: 120px 90px;
+
+  &__list {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    counter-reset: myCounter;
+  }
+
+  &__item {
+    width: 30%;
+    list-style: none;
+    padding-top: 25px;
+    position: relative;
+
+    &::before {
+      counter-increment: myCounter;
+      content: counter(myCounter);
+      background-color: rgba(254, 160, 82, 0.26);
+      border-radius: 15px;
+      display: inline-block;
+      text-align: center;
+      line-height: normal;
+      height: auto;
+      width: auto;
+      padding: 2px 8px;
+      top: 55px;
+      left: -40px;
+      position: absolute;
+    }
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    color: #313131;
+    font-weight: 600;
+    font-family: 'Playfair Display SC', serif;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 45px;
+      height: 2px;
+      background-color: #313131;
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+    }
   }
 }

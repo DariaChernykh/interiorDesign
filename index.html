@@ -76,20 +76,20 @@
       Портфолио
     </h2>
     <ul class="portfolio__list">
-      <li>
+      <li class="portfolio__item portfolio__item-active">
         Все проекты
       </li>
-      <li>
+      <li class="portfolio__item">
         Дизайн интерьеров
       </li>
-      <li>
+      <li class="portfolio__item">
         Отделочные работы
       </li>
     </ul>
-    <div class="slider"></div>
+    <div class="portfolio__slider"></div>
   </section>
   <section class="services">
-    <h2 class="main-caption">
+    <h2 class=" main-caption services-caption">
       Наши услуги
     </h2>
 
@@ -100,7 +100,7 @@
       <li class="services__item">
         Дизайн отельных комнат
       </li>
-      <li class="services__item">
+      <li class="services__item services__item-active">
         Дизайн коммерческих объектов
       </li>
       <li class="services__item">
@@ -115,70 +115,75 @@
     </ul>
     <div class="services__content">
       <img class="services__photo" width="878" height="390" src="./img/d-background-image2.jpg">
-      <span class="services__caption">Дизайн коммерческих объектов</span>
-      <p class="services__text">
-        Работая с коммерческими объектами, студия изучает целевую аудиторию, создает коммерческие интерьеры такими, чтобы посетители кафе, бара, гостиницы хотели возвращаться в интерьер снова и снова
-      </p>
-      <button class="services__button">Консультация</button>
+      <div class="services__wrapper services__wrapper-left">
+        <h3 class="services__subcaption">Дизайн коммерческих объектов</h3>
+        <p class="services__text">
+          Работая с коммерческими объектами, студия изучает целевую аудиторию, создает коммерческие интерьеры такими, чтобы посетители кафе, бара, гостиницы хотели возвращаться в интерьер снова и снова
+        </p>
+      </div>
+      <div class="services__wrapper services__wrapper-right">
+        <p class="services__projects">532 проекта</p>
+        <button class="services__button">Консультация</button>
+      </div>
     </div>
   </section>
-  <article>
-    <img width="320" height="620" src="./img/p-background-image3.jpg">
+  <article class="article">
+    <p class="article__text">О  студии дизайна интерьеров BRUME за 2 минуты</p>
   </article>
-  <section>
+  <section class="stages">
     <h2 class="main-caption">
       Этапы работы
     </h2>
-    <ul>
-      <li>
-        <p>
+    <ol class="stages__list">
+      <li class="stages__item">
+        <p class="stages__subtitle">
           Консультация
         </p>
         <p>
           Обсуждаем задачи и пожелания, предлагаем варианты дизайна интерьера, оговариваем сроки реализации.
         </p>
       </li>
-      <li>
-        <p>
+      <li class="stages__item">
+        <p class="stages__subtitle">
           Техническое задание
         </p>
         <p>
           Составляем техническое задание. Заключаем договор, в котором прописываем все этапы проекта.
         </p>
       </li>
-      <li>
-        <p>
+      <li class="stages__item">
+        <p class="stages__subtitle">
           Замеры и планировка
         </p>
         <p>
           Фиксируем размеры стен, окон, плинтусов, дверных проемов для эффективной работы
         </p>
       </li>
-      <li>
-        <p>
+      <li class="stages__item">
+        <p class="stages__subtitle">
           Дизайн-концепция
         </p>
         <p>
           Создаем концепцию на основе пожеланий клиента, его образов и ощущений. Подбираем мебель.
         </p>
       </li>
-      <li>
-        <p>
+      <li class="stages__item">
+        <p class="stages__subtitle">
           3D Визуализация
         </p>
         <p>
           Создаем 3d визуализацию, собираем пакет чертежей соответствующий строительным нормам.
         </p>
       </li>
-      <li>
-        <p>
+      <li class="stages__item">
+        <p class="stages__subtitle">
           Комплектация интерьера
         </p>
         <p>
           Подбираем мебель, отделочные материалы, светильники и текстиль. Декорируем интерьер.
         </p>
       </li>
-    </ul>
+    </ol>
   </section>
   <section>
     <h2 class="main-caption">
