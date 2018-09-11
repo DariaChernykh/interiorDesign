@@ -14,13 +14,6 @@ header {
   max-width: 100%;
   position: relative;
   background-color: #fdfaf3;
-
-  &::after {
-    content:'+7 (800) 823 48 88';
-    position: absolute;
-    top: 30px;
-    right: 95px;
-  }
 }
 
 @font-face {
@@ -80,14 +73,20 @@ ul {
     margin: 0 125px 0 190px;
   }
 
-  &__caption {
+  &__title {
     font-family: 'Playfair Display SC', serif;
     font-size: 60px;
+    line-height: 1;
+    padding-bottom: 24px;
+    margin: 0;
   }
 
   &__description {
     font-family: 'MullerLight', serif;
     font-size: 14px;
+    line-height: 1.448;
+    padding-bottom: 35px;
+    margin: 0;
   }
 
   &__menu {
@@ -95,38 +94,65 @@ ul {
     margin-right: auto;
     list-style: none;
   }
+
+  &__button {
+    position: relative;
+    font-size: 14px;
+    font-weight: 700;
+    width: 277px;
+    height: 56px;
+    box-sizing: border-box;
+    padding: 20px 30px;
+
+    font-family: 'Raleway', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: left;
+
+    border: none;
+    background-color: #f8a25a;
+    box-shadow: 4px 7px 20px 8px rgba(0, 1, 6, 0.06);
+
+    &::after {
+      position: absolute;
+      width: 40px;
+      height: 10px;
+      top: 20px;
+      right: 29px;
+      content: url("../img/arrow-OutRight-icon.png");
+    }
+  }
+
+  &__phone {
+    font-size: 14.562px;
+    font-family: "Muller", sans-serif;
+    color: rgb(37, 37, 37);
+    letter-spacing: 1px;
+    line-height: 1.2;
+    position: absolute;
+    top: 20px;
+    right: 95px;
+  }
 }
 
-.button {
-  width: 277px;
-  height: 56px;
-  box-sizing: border-box;
-  padding: 20px 30px;
+.features {
+  &__list {
+    width: 100%;
+    min-height: 730px;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 130px 95px;
+    margin: 0;
+    counter-reset: myCounter;
+  }
 
-  font-family: 'Raleway', sans-serif;
-  color: #ffffff;
-  text-transform: uppercase;
-  text-align: left;
-
-  border: none;
-  background-color: #f8a25a;
-  box-shadow: 4px 7px 20px 8px rgba(0, 1, 6, 0.06);
-}
-.pre {
-  width: 100%;
-  min-height: 500px;
-  justify-content: space-around;
-  display: flex;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  padding: 30px 95px;
-  margin: 0;
-  counter-reset: myCounter;
-
-  & li {
+  &__item {
     width: 260px;
     list-style: none;
     line-height: 20px;
+    font-family: 'Raleway', sans-serif;
 
     &:nth-child(even) {
       align-self: flex-end;
@@ -148,7 +174,25 @@ ul {
       font-size: 85px;
     }
   }
+
+  &__title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a292f;
+    padding: 25px 0;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.56;
+    letter-spacing: 0.8px;
+    color: #838383;
+  }
 }
+
 
 .main-caption{
   font-family: 'Playfair Display SC', serif;
@@ -167,6 +211,10 @@ ul {
 }
 
 .portfolio {
+  &__title{
+    padding-bottom: 55px;
+  }
+
   &__list {
     display: flex;
     padding: 0;
@@ -224,6 +272,7 @@ ul {
   }
 
   &__item {
+    font-weight: 300;
     padding: 0 0 80px;
 
     &:last-child {
@@ -299,8 +348,7 @@ ul {
   background-color: rgba(17, 37, 55, .6);
   background-blend-mode: multiply;
 
-  font-size: 13px;
-  font-family: "Raleway";
+  font-family: 'Raleway', sans-serif;
   color: rgb(255, 255, 255);
   line-height: 650px;
   text-align: center;
@@ -318,6 +366,8 @@ ul {
 
   &__text {
     margin: 0;
+    font-size: 18px;
+    letter-spacing: 0.5px;
   }
 }
 
@@ -334,7 +384,8 @@ ul {
   }
 
   &__item {
-    width: 30%;
+    width: 280px;
+    margin: 0 30px;
     list-style: none;
     padding-top: 25px;
     position: relative;
@@ -350,7 +401,7 @@ ul {
       height: auto;
       width: auto;
       padding: 2px 8px;
-      top: 55px;
+      top: 50px;
       left: -40px;
       position: absolute;
     }
@@ -360,7 +411,8 @@ ul {
     font-size: 22px;
     color: #313131;
     font-weight: 600;
-    font-family: 'Playfair Display SC', serif;
+    line-height: 0.8;
+    font-family: 'Raleway', serif;
     position: relative;
 
     &::after {
@@ -370,7 +422,186 @@ ul {
       background-color: #313131;
       position: absolute;
       left: 0;
-      bottom: -7px;
+      bottom: -10px;
     }
+  }
+
+  &__text {
+    font-family: 'Raleway', serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.56;
+    color: #5e5e5e;
+    margin: 0;
+    padding-top: 30px;
+  }
+}
+
+.form {
+  width: 100%;
+  display: flex;
+
+  &__caption {
+    color: #fdfaf3;
+    font-size: 31px;
+  }
+
+  &__wrapper {
+    padding: 0;
+    margin: 0;
+    flex-basis: 50%;
+    height: 690px;
+
+    &-left {
+      background-color: #00203a;
+      color: #dcd9d2;
+      padding: 80px 90px 90px 105px;
+      box-sizing: border-box;
+    }
+
+    &-right {
+      background: url("../img/d-background-image4.jpg") no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+  }
+
+  &__list {
+    & input {
+      color: rgb(255, 255, 255);
+      font-size: 16px;
+      width: 100%;
+      margin: 20px 0;
+      padding: 10px 0;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+      outline: none;
+
+      &:focus {
+        border-color: rgb(255, 255, 255);
+      }
+
+      &::placeholder {}
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &__label {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      width: 22px;
+      height: 20px;
+      right: 0;
+      top: 0;
+    }
+
+    &-name::before {
+      content: url("../img/person-icon.png");
+    }
+
+    &-phone::before {
+      content: url("../img/phone-ring-icon.png");
+    }
+
+    &-email::before {
+      content: url("../img/email-icon.png");
+    }
+  }
+
+  &__button {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: none;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 57px;
+  }
+}
+
+.reviews {
+  padding: 150px 0;
+
+  &__caption {
+    padding: 0 90px;
+  }
+  &__content {
+    margin: 90px 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.review {
+  margin: 0 230px 0 90px;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  width: 650px;
+  height: 270px;
+  box-sizing: border-box;
+  padding: 40px 140px 40px 70px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 4px 6.928px 36.72px 14.28px rgba(0, 0, 1, 0.02);
+  position: relative;
+
+  &__name {
+    font-size: 22px;
+    color: rgb(49, 49, 49);
+    font-weight: bold;
+    line-height: 1.364;
+    margin: 0;
+  }
+
+  &__service {
+    color: rgb(239, 177, 114);
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  &__text {
+    color: rgb(94, 94, 94);
+    line-height: 1.563;
+  }
+
+  &__image-container {
+    position: absolute;
+    overflow: hidden;
+    width: 200px;
+    height: 190px;
+    top: 40px;
+    right: -100px;
+  }
+}
+
+.footer {
+  height: 250px;
+  width: 100%;
+  background-color: #00203a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__navigation {
+    padding-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
   }
 }
