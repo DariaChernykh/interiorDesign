@@ -12,14 +12,17 @@
 <header>
   <div class="header__content">
     <img class="header__logo" width="98" height="29" src="./img/logo.png">
-    <ul class="header__menu">
-      <li>Главная</li>
-      <li>Преимущества</li>
-      <li>Портфолио</li>
-      <li>Наши услуги</li>
-      <li>Отзывы</li>
-      <li>Контакты</li>
-    </ul>
+    <div class="header-navigation">
+      <img class="header-navigation__logo" src="img/002-menu.png" width="26">
+    </div>
+    <nav class="header-navigation__list">
+      <a class="header-navigation__link" href="#">Главная</a>
+      <a class="header-navigation__link" href="#features">Преимущества</a>
+      <a class="header-navigation__link" href="#portfolio">Портфолио</a>
+      <a class="header-navigation__link" href="#services">Наши услуги</a>
+      <a class="header-navigation__link" href="#reviews">Отзывы</a>
+      <a class="header-navigation__link" href="#form">Контакты</a>
+    </nav>
     <div class="header__wrapper">
       <h1 class="header__title">
         Дизайн интерьеров
@@ -27,8 +30,19 @@
       <p class="header__description">
         Воплотим в жизнь итерьер, который будет радовать лаконичностью и уютом.
       </p>
-      <button class="header__button">Заказать дизайн</button>
+      <a href="#form" class="header__link">Заказать дизайн</a>
     </div>
+    <nav class="social__navigation">
+      <a class="social__link" href="#">
+        <img class="social__link-vk" src="img/vk-icon.png">
+      </a>
+      <a class="social__link" href="#">
+        <img class="social__link-in" src="img/instagram-icon.png">
+      </a>
+      <a class="social__link" href="#">
+        <img class="social__link-fb" src="img/facebook-icon.png">
+      </a>
+    </nav>
   </div>
   <div class="header__background">
   </div>
@@ -39,7 +53,7 @@
 </header>
 <main>
 
-  <section>
+  <section id="features">
     <ol class="features__list">
       <li class="features__item">
         <h3 class="features__title">
@@ -75,7 +89,7 @@
       </li>
     </ol>
   </section>
-  <section class="portfolio">
+  <section class="portfolio" id="portfolio">
     <h2 class="main-caption portfolio__title">
       Портфолио
     </h2>
@@ -92,7 +106,7 @@
     </ul>
     <div class="portfolio__slider"></div>
   </section>
-  <section class="services">
+  <section class="services" id="services">
     <h2 class=" main-caption services-caption">
       Наши услуги
     </h2>
@@ -189,7 +203,7 @@
       </li>
     </ol>
   </section>
-  <section class="form">
+  <section class="form" id="form">
     <div class="form__wrapper form__wrapper-left">
       <h2 class="main-caption form__caption">
         Мечтаете об интерьере от BRUME?
@@ -218,7 +232,7 @@
     <div class="form__wrapper form__wrapper-right">
     </div>
   </section>
-  <section class="reviews">
+  <section class="reviews" id="reviews">
     <h2 class="main-caption reviews__caption">
       Отзывы наших клиентов
     </h2>
@@ -230,7 +244,7 @@
             Александра Холодная
           </p>
           <p class="review__service">
-            Услуга: инерьер детской
+            Услуга: интерьер детской
           </p>
           <p class="review__text">
             Спасибо студии за замечательный интерьер для моей 4-х летней дочки! Работа прошла быстро и легко, команда выполнила все точно в срок, сделали все как мы и хотели.
@@ -250,17 +264,18 @@
   <div class="footer__wrapper">
     <img src="img/logo-white.png" width="70">
     <nav class="footer__navigation">
-      <a class="footer__link">
+      <a class="footer__link" href="#">
         <img class="footer__link-vk" src="img/vk-icon.png">
       </a>
-      <a class="footer__link">
+      <a class="footer__link" href="#">
         <img class="footer__link-in" src="img/instagram-icon.png">
       </a>
-      <a class="footer__link">
+      <a class="footer__link" href="#">
         <img class="footer__link-fb" src="img/facebook-icon.png">
       </a>
     </nav>
   </div>
 </footer>
+
 </body>
 </html>

@@ -89,16 +89,47 @@ ul {
     margin: 0;
   }
 
-  &__menu {
-    display: none;
-    margin-right: auto;
-    list-style: none;
+  &-navigation {
+    width: 26px;
+    height: 18px;
+    position: absolute;
+    top: 30px;
+    left: 102px;
+    opacity: .5;
   }
 
-  &__button {
+  &-navigation__list {
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 80px;
+    left: 95px;
+    width: 1168px;
+    height: 595px;
+    background-color: rgb(17, 37, 55);
+    z-index: 1;
+    padding-top: 130px;
+    box-sizing: border-box;
+  }
+
+  &-navigation__link {
+    display: block;
+    font-size: 18px;
+    font-family: "Raleway", sans-serif;
+    color: rgba(255, 255, 255, .5);
+    font-weight: 400;
+    line-height: 3;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: block;
     position: relative;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     width: 277px;
     height: 56px;
     box-sizing: border-box;
@@ -109,9 +140,12 @@ ul {
     text-transform: uppercase;
     text-align: left;
 
-    border: none;
-    background-color: #f8a25a;
+    border: 1px solid #ffffff;
     box-shadow: 4px 7px 20px 8px rgba(0, 1, 6, 0.06);
+
+    &:hover {
+      background-color: #f8a25a;
+    }
 
     &::after {
       position: absolute;
@@ -130,20 +164,29 @@ ul {
     letter-spacing: 1px;
     line-height: 1.2;
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 95px;
   }
+}
+
+.social__navigation {
+  position: absolute;
+  bottom: 30px;
+  left: 100px;
+  display: flex;
+  justify-content: space-between;
+  width: 110px;
 }
 
 .features {
   &__list {
     width: 100%;
-    min-height: 730px;
+    min-height: 570px;
     justify-content: space-around;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
-    padding: 130px 95px;
+    padding: 50px 95px;
     margin: 0;
     counter-reset: myCounter;
   }
@@ -203,7 +246,7 @@ ul {
 
 .portfolio,
 .services {
-  padding: 0 90px 120px;
+  padding: 0 90px 50px;
 
   color: #7d7d7d;
   font-size: 18px;
@@ -251,6 +294,7 @@ ul {
 .services {
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 100px;
 
   &-caption {
     width: 100%;
@@ -287,7 +331,7 @@ ul {
   }
 
   &__photo {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
   &__wrapper {
@@ -372,7 +416,7 @@ ul {
 }
 
 .stages {
-  padding: 120px 90px;
+  padding: 50px 90px 100px;
 
   &__list {
     width: 100%;
@@ -532,13 +576,13 @@ ul {
 }
 
 .reviews {
-  padding: 150px 0;
+  padding: 70px 0;
 
   &__caption {
     padding: 0 90px;
   }
   &__content {
-    margin: 90px 0;
+    margin: 70px 0;
     display: flex;
     justify-content: center;
   }
@@ -587,7 +631,7 @@ ul {
 }
 
 .footer {
-  height: 250px;
+  height: 150px;
   width: 100%;
   background-color: #00203a;
   display: flex;
