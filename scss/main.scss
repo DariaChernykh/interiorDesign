@@ -286,9 +286,39 @@ ul {
 
   &__slider {
     width: 100%;
-    height: 555px;
+    height: 550px;
+    overflow: hidden;
     background-color: rgba(255, 0, 0, 0.29);
+    display: flex;
   }
+
+  &__block {
+    flex: 1 1 auto;
+    position: relative;
+    & img {
+      width: 100%;
+    }
+
+    &-small::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(17, 37, 55, .8);
+    }
+
+    &-big:hover::after {
+      position: absolute;
+      content: url("../img/plus.png");
+      width: 110px;
+      height: 110px;
+      top: 40%;
+      left: 40%;
+    }
+  }
+
 }
 
 .services {
