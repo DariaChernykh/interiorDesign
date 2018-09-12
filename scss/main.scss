@@ -91,7 +91,7 @@ ul {
 
   &-navigation {
     width: 26px;
-    height: 18px;
+    height: 26px;
     position: absolute;
     top: 30px;
     left: 102px;
@@ -262,6 +262,7 @@ ul {
     display: flex;
     padding: 0;
     margin: 10px 0 40px;
+    font-weight: 600;
   }
 
   &__item {
@@ -270,7 +271,6 @@ ul {
     &-active{
       position: relative;
       color: #00203a;
-      font-weight: 600;
 
       &::after {
         position: absolute;
@@ -317,7 +317,7 @@ ul {
 
   &__item {
     font-weight: 300;
-    padding: 0 0 80px;
+    height: 110px;
 
     &:last-child {
       padding-bottom: 40px;
