@@ -67,6 +67,10 @@ ul {
     position: absolute;
     top: 25px;
     right: -65px;
+
+    &-white {
+      display: none;
+    }
   }
 
   &__wrapper {
