@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Design studio</title>
-  <meta name="viewport" content="width=320, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/main.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700&amp;subset=cyrillic" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
@@ -106,21 +106,34 @@
         Отделочные работы
       </a>
     </nav>
-    <div class="portfolio__slider">
-      <div class="portfolio__block portfolio__block-small">
-        <img src="img/d-cam1-large.jpg" width="258">
-      </div>
-      <div class="portfolio__block portfolio__block-big">
-        <img src="img/d-cam3-large.jpg" width="392">
-      </div>
-      <div class="portfolio__block portfolio__block-small">
-        <img src="img/d-cam2-large.jpg" width="258">
-      </div>
-      <div class="portfolio__block portfolio__block-small">
-        <img src="img/d-cam4-large.jpg" width="258">
-      </div>
-    </div>
   </section>
+
+  <div class="portfolio__slider-desktop">
+    <div class="portfolio__block portfolio__block-small">
+      <img src="img/d-cam1-large.jpg" width="258">
+    </div>
+    <div class="portfolio__block portfolio__block-big">
+      <img src="img/d-cam3-large.jpg" width="392">
+    </div>
+    <div class="portfolio__block portfolio__block-small">
+      <img src="img/d-cam2-large.jpg" width="258">
+    </div>
+    <div class="portfolio__block portfolio__block-small">
+      <img src="img/d-cam4-large.jpg" width="258">
+    </div>
+  </div>
+
+  <div class="portfolio__slider-tablet">
+    <div class="portfolio__block portfolio__block-big">
+      <picture>
+        <source srcset="img/p-cam3_large.jpg" media="(max-width: 321px)">
+        <img src="img/t-cam3-large.jpg" width="604">
+      </picture>
+    </div>
+  </div>
+
+  <p class="portfolio__description-tablet">Дизайн интерьера гостиной</p>
+
   <section class="services" id="services">
     <h2 class=" main-caption services-caption">
       Наши услуги
@@ -147,16 +160,25 @@
       </li>
     </ul>
     <div class="services__content">
-      <img class="services__photo" width="878" height="390" src="./img/d-background-image2.jpg">
-      <div class="services__wrapper services__wrapper-left">
-        <h3 class="services__subcaption">Дизайн коммерческих объектов</h3>
-        <p class="services__text">
-          Работая с коммерческими объектами, студия изучает целевую аудиторию, создает коммерческие интерьеры такими, чтобы посетители кафе, бара, гостиницы хотели возвращаться в интерьер снова и снова
-        </p>
-      </div>
-      <div class="services__wrapper services__wrapper-right">
-        <p class="services__projects">532 проекта</p>
-        <button class="services__button">Консультация</button>
+
+
+      <picture class="services__photo">
+        <source srcset="img/p-background-image2.jpg" media="(max-width: 321px)">
+        <source srcset="img/t-background-image2.jpg" media="(max-width: 769px)">
+        <source srcset="img/d-background-image2.jpg" media="(min-width: 769px)">
+        <img src="img/d-background-image2.jpg">
+      </picture>
+      <div class="services__wrapper">
+        <div class="services__wrapper-left">
+          <h3 class="services__subcaption">Дизайн коммерческих объектов</h3>
+          <p class="services__text">
+            Работая с коммерческими объектами, студия изучает целевую аудиторию, создает коммерческие интерьеры такими, чтобы посетители кафе, бара, гостиницы хотели возвращаться в интерьер снова и снова
+          </p>
+        </div>
+        <div class="services__wrapper-right">
+          <p class="services__projects">532 проекта</p>
+          <button class="services__button">Консультация</button>
+        </div>
       </div>
     </div>
   </section>
@@ -164,7 +186,7 @@
     <p class="article__text">О  студии дизайна интерьеров BRUME за 2 минуты</p>
   </article>
   <section class="stages">
-    <h2 class="main-caption">
+    <h2 class="main-caption stages__caption">
       Этапы работы
     </h2>
     <ol class="stages__list">

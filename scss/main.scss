@@ -1,3 +1,15 @@
+@mixin tablet-width {
+  @media screen and (max-width: 769px) {
+    @content
+  }
+}
+
+@mixin phone-width {
+  @media screen and (max-width: 321px) {
+    @content
+  }
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -8,6 +20,16 @@ html {
 body {
   width: 1360px;
   margin: 0 auto;
+  background-color: #fdfaf3;
+
+  @include tablet-width{
+    width: 768px;
+    margin: 0;
+  }
+
+  @include phone-width{
+    width: 320px;
+  }
 }
 
 header {
@@ -39,14 +61,26 @@ ul {
 .header {
   &__background {
     position: absolute;
-    top:0;
-    left: 0;
+    top: 80px;
+    left: 100px;
     width: 1163px;
-    margin: 80px 95px 80px 100px;
-    height: 595px;
+    min-height: 595px;
 
     background: url("../img/d-background-image.jpg") 0 0 no-repeat;
     background-size: cover;
+
+    @include tablet-width {
+      width: 100%;
+      top: 0;
+      left: 0;
+      min-height: 1112px;
+      background: url("../img/t-background-image.jpg") 0 0 no-repeat;
+    }
+
+    @include phone-width {
+      min-height: 608px;
+      background: url("../img/p-background-image.jpg") 0 0 no-repeat;
+    }
   }
 
   &__content {
@@ -59,8 +93,19 @@ ul {
     position: relative;
 
     color: #ffffff;
-    background-color: rgba(17, 37, 55, .97);
+    background-color: rgba(17, 37, 55, .8);
     z-index: 1;
+
+    @include tablet-width {
+      align-items: center;
+      min-height: 1112px;
+      width: 100%;
+      margin: 0;
+    }
+
+    @include phone-width {
+      min-height: 608px;
+    }
   }
 
   &__logo {
@@ -68,13 +113,38 @@ ul {
     top: 25px;
     right: -65px;
 
+    @include tablet-width {
+      display: none;
+    }
+
     &-white {
       display: none;
+      @include tablet-width {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 40px;
+      }
+
+      @include phone-width {
+        top: 25px;
+        left: 15px;
+      }
     }
   }
 
   &__wrapper {
     margin: 0 125px 0 190px;
+
+    @include tablet-width {
+      margin: 0;
+      width: 600px;
+      text-align: center;
+    }
+
+    @include phone-width {
+      width: 292px;
+    }
   }
 
   &__title {
@@ -83,6 +153,14 @@ ul {
     line-height: 1;
     padding-bottom: 24px;
     margin: 0;
+
+    @include tablet-width {
+      font-size: 85px;
+    }
+
+    @include phone-width {
+      font-size: 42px;
+    }
   }
 
   &__description {
@@ -91,6 +169,15 @@ ul {
     line-height: 1.448;
     padding-bottom: 35px;
     margin: 0;
+
+    @include tablet-width {
+      font-size: 26px;
+    }
+
+    @include phone-width {
+      font-size: 18px;
+      font-family: 'MullerLight', serif;
+    }
   }
 
   &-navigation {
@@ -100,6 +187,19 @@ ul {
     top: 30px;
     left: 102px;
     opacity: .5;
+
+    @include tablet-width {
+      top: 60px;
+      left: auto;
+      right: 40px;
+      opacity: .9;
+      z-index: 2;
+    }
+
+    @include phone-width {
+      right: 15px;
+      top: 25px;
+    }
   }
 
   &-navigation__list {
@@ -114,6 +214,17 @@ ul {
     z-index: 1;
     padding-top: 130px;
     box-sizing: border-box;
+
+    @include tablet-width{
+      width: 768px;
+      height: 1112px;
+      top: 0;
+      left: 0;
+    }
+
+    @include phone-width{
+      height: 608px;
+    }
   }
 
   &-navigation__link {
@@ -147,6 +258,23 @@ ul {
     border: 1px solid #ffffff;
     box-shadow: 4px 7px 20px 8px rgba(0, 1, 6, 0.06);
 
+    @include tablet-width{
+      font-size: 30px;
+      margin: 0 auto;
+      width: 400px;
+      text-align: center;
+      padding: 0;
+      line-height: 110px;
+      height: 110px;
+    }
+
+    @include phone-width {
+      width: 225px;
+      height: 56px;
+      font-size: 14px;
+      line-height: 56px;
+    }
+
     &:hover {
       background-color: #f8a25a;
     }
@@ -158,6 +286,10 @@ ul {
       top: 20px;
       right: 29px;
       content: url("../img/arrow-OutRight-icon.png");
+
+      @include tablet-width{
+        display: none;
+      }
     }
   }
 
@@ -170,6 +302,10 @@ ul {
     position: absolute;
     top: 30px;
     right: 95px;
+
+    @include tablet-width{
+      display: none;
+    }
   }
 }
 
@@ -193,6 +329,14 @@ ul {
     padding: 50px 95px;
     margin: 0;
     counter-reset: myCounter;
+
+    @include tablet-width{
+      padding: 50px 35px;
+    }
+
+    @include phone-width {
+      padding: 50px 15px;
+    }
   }
 
   &__item {
@@ -201,8 +345,29 @@ ul {
     line-height: 20px;
     font-family: 'Raleway', sans-serif;
 
+    @include tablet-width{
+      box-sizing: border-box;
+      width: 347px;
+      padding-right: 70px;
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    @include phone-width {
+      width: 100%;
+      padding: 0 0 25px;
+    }
+
     &:nth-child(even) {
       align-self: flex-end;
+
+      @include tablet-width {
+        padding-top: 140px;
+      }
+
+      @include phone-width {
+        padding-top: 0;
+      }
     }
 
     &::before {
@@ -219,15 +384,24 @@ ul {
 
       font-family: 'Playfair Display SC', serif;
       font-size: 85px;
+
+      @include tablet-width {
+        line-height: .7;
+      }
     }
   }
 
   &__title {
+    font-family: "Raleway", sans-serif;
     margin: 0;
     font-size: 22px;
     font-weight: 600;
     color: #1a292f;
     padding: 25px 0;
+
+    @include tablet-width {
+      font-size: 24px;
+    }
   }
 
   &__text {
@@ -255,6 +429,14 @@ ul {
   color: #7d7d7d;
   font-size: 18px;
   font-family: 'Raleway', sans-serif;
+
+  @include tablet-width {
+    padding: 0 35px 50px;
+  }
+
+  @include phone-width {
+    padding: 0 15px 50px;
+  }
 }
 
 .portfolio {
@@ -267,10 +449,28 @@ ul {
     padding: 0;
     margin: 10px 0 40px;
     font-weight: 600;
+
+    @include tablet-width {
+      font-size: 22px;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    @include phone-width {
+      flex-direction: column;
+    }
   }
 
   &__item {
     margin-right: 60px;
+
+    @include tablet-width {
+      margin: 0;
+    }
+
+    @include phone-width {
+      margin-bottom: 25px;
+    }
 
     &-active{
       position: relative;
@@ -288,12 +488,47 @@ ul {
     }
   }
 
-  &__slider {
-    width: 100%;
+  &__slider-desktop {
+    background-color: #fdfaf3;
     height: 550px;
     overflow: hidden;
-    background-color: rgba(255, 0, 0, 0.29);
     display: flex;
+    padding: 0 90px;
+    margin-bottom: 50px;
+
+    @include tablet-width {
+      display: none;
+      width: 100%;
+    }
+  }
+
+  &__slider-tablet {
+    display: none;
+
+    @include tablet-width {
+    background-color: #fdfaf3;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    height: 667px;
+    }
+  }
+
+  &__description-tablet {
+    display: none;
+
+    @include tablet-width {
+      background-color: #fdfaf3;
+      font-weight: 600;
+      color: #00203a;
+      display: block;
+      width: 100%;
+      margin: 0 0 50px;
+      text-align: center;
+      font-size: 20px;
+      font-family: 'Raleway', sans-serif;
+    }
   }
 
   &__block {
@@ -301,6 +536,21 @@ ul {
     position: relative;
     & img {
       width: 100%;
+    }
+
+    &-big {
+      @include tablet-width {
+        width: 605px;
+        //margin: 0 44px;
+        flex: 0 0 auto;
+        margin: 0 auto;
+      }
+
+      @include phone-width {
+        width: 260px;
+        //margin: 0 44px;
+        margin: 0 auto;
+      }
     }
 
     &-small::after {
@@ -330,9 +580,23 @@ ul {
   flex-wrap: wrap;
   padding-bottom: 100px;
 
+  @include tablet-width {
+    padding: 0;
+    margin-bottom: 50px;
+  }
+
   &-caption {
     width: 100%;
     margin-bottom: 70px;
+
+    @include tablet-width {
+      padding: 0 35px;
+    }
+
+    @include phone-width {
+      padding: 0 15px;
+      margin-bottom: 50px;
+    }
   }
 
   &__content {
@@ -340,6 +604,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
   }
 
   &__list {
@@ -347,11 +612,37 @@ ul {
     width: 225px;
     padding: 0;
     margin-right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include tablet-width {
+      font-size: 22px;
+      font-family: "Raleway", sans-serif;
+      width: 100%;
+      margin-right: 0;
+      padding: 0 35px;
+      box-sizing: border-box;
+    }
+
+    @include phone-width {
+      padding: 0 15px 0;
+    }
   }
 
   &__item {
     font-weight: 300;
     height: 110px;
+
+    @include tablet-width {
+      height: 80px;
+      width: 345px;
+      padding-right: 50px;
+      box-sizing: border-box;
+    }
+
+    @include phone-width {
+      padding-right: 0;
+    }
 
     &:last-child {
       padding-bottom: 40px;
@@ -361,6 +652,10 @@ ul {
       padding-left: 25px;
       font-weight: 600;
       color: #00203a;
+
+      @include tablet-width {
+        padding-left: 0;
+      }
     }
   }
 
@@ -370,6 +665,20 @@ ul {
 
   &__wrapper {
     max-height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @include tablet-width {
+      box-sizing: border-box;
+      padding: 0 35px;
+      position: relative;
+      min-height: 320px;
+    }
+
+    @include phone-width {
+      padding: 0 15px;
+    }
 
     &-left {
       width: 60%;
@@ -383,15 +692,27 @@ ul {
       flex-direction: column;
       align-items: flex-end;
       justify-content: space-between;
+      margin-left: auto;
     }
   }
   &__projects {
     margin: 0;
+
+    @include phone-width {
+      display: none;
+    }
   }
 
   &__text{
     width: 485px;
     line-height: 30px;
+    font-size: 18px;
+    font-family: "Raleway", sans-serif;
+
+    @include phone-width {
+      width: 290px;
+      font-size: 20px;
+    }
   }
 
   &__subcaption{
@@ -401,9 +722,13 @@ ul {
     font-size: 30px;
     color: #112537;
     font-family: 'Playfair Display SC', serif;
+
+    @include phone-width {
+      display: none;
+    }
   }
 
-  &__button{
+  &__button {
     width: 215px;
     height: 55px;
 
@@ -414,6 +739,22 @@ ul {
     text-transform: uppercase;
     border: solid 2px #112537;
     background-color: #fdfaf3;
+
+    @include tablet-width {
+      position: absolute;
+      width: 340px;
+      height: 70px;
+      font-size: 18px;
+      left: 35px;
+      bottom: 0;
+    }
+
+    @include phone-width {
+      width: 215px;
+      height: 55px;
+      left: 55px;
+      bottom: -12px;
+    }
   }
 }
 
@@ -428,8 +769,21 @@ ul {
 
   font-family: 'Raleway', sans-serif;
   color: rgb(255, 255, 255);
-  line-height: 650px;
   text-align: center;
+
+  @include tablet-width {
+    height: 815px;
+    background: url("../img/t-background-image3.jpg") no-repeat;
+    background-color: rgba(17, 37, 55, .6);
+    background-blend-mode: multiply;
+  }
+
+  @include phone-width {
+    height: 622px;
+    background: url("../img/p-background-image3.jpg") no-repeat;
+    background-color: rgba(17, 37, 55, .6);
+    background-blend-mode: multiply;
+  }
 
   &::before {
     content: '';
@@ -440,17 +794,56 @@ ul {
     top: 35%;
     left: calc(50% - 55px);
     cursor: pointer;
+
+    @include tablet-width {
+      top: calc(50% - 55px);
+    }
+
+    @include phone-width {
+      left: 35%;
+    }
   }
 
   &__text {
     margin: 0;
     font-size: 18px;
     letter-spacing: 0.5px;
+    position: absolute;
+    left: 33%;
+    top: 55%;
+
+    @include tablet-width {
+      font-size: 22px;
+      width: 455px;
+      margin: 0 auto;
+      left: 20%;
+      top: 57%;
+    }
+
+    @include phone-width {
+      width: 290px;
+      left: 5%;
+      top: 60%;
+    }
   }
 }
 
 .stages {
   padding: 50px 90px 100px;
+
+  @include tablet-width {
+    padding: 50px 35px 100px;
+  }
+
+  @include phone-width {
+    padding: 50px 15px 100px;
+  }
+
+  &__caption {
+    @include phone-width {
+      text-align: center;
+    }
+  }
 
   &__list {
     width: 100%;
@@ -459,8 +852,12 @@ ul {
     flex-wrap: wrap;
     margin: 0;
     counter-reset: myCounter;
-  }
 
+    @include phone-width {
+      padding-left: 15px;
+    }
+
+  }
   &__item {
     width: 280px;
     margin: 0 30px;
@@ -530,16 +927,44 @@ ul {
     flex-basis: 50%;
     height: 690px;
 
+    @include tablet-width {
+      flex-basis: 100%;
+      height: 708px;
+    }
+
+    @include phone-width {
+      height: 911px;
+    }
+
     &-left {
-      background-color: #00203a;
+      background-color: rgb(17, 37, 55);
       color: #dcd9d2;
       padding: 80px 90px 90px 105px;
       box-sizing: border-box;
+
+      @include tablet-width {
+        background: url("../img/t-background-image4.jpg") no-repeat;
+        background-color: rgba(17, 37, 55, .1);
+        background-blend-mode: multiply;
+        text-align: center;
+        padding: 70px 135px 80px;
+      }
+
+      @include phone-width {
+        padding: 70px 15px 80px;
+        background: url("../img/p-background-image4.jpg") no-repeat;
+        background-color: rgba(17, 37, 55, .1);
+      }
     }
 
     &-right {
       background: url("../img/d-background-image4.jpg") no-repeat;
       background-size: cover;
+
+      @include tablet-width {
+        display: none;
+      }
+
     }
   }
 
@@ -548,9 +973,23 @@ ul {
     line-height: 24px;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
+    @include tablet-width {
+      width: 485px;
+    }
+
+    @include phone-width {
+      width: 290px;
+    }
   }
 
   &__list {
+    @include tablet-width {
+      width: 485px;
+    }
+
+    @include phone-width {
+      width: 290px;
+    }
     & input {
       color: rgb(255, 255, 255);
       font-size: 16px;
@@ -612,13 +1051,39 @@ ul {
 .reviews {
   padding: 70px 0;
 
+  @include tablet-width{
+    padding-left: 35px;
+  }
+
+  @include phone-width {
+    padding: 50px 0 0 0;
+  }
+
   &__caption {
     padding: 0 90px;
+
+    @include tablet-width {
+      padding: 0;
+    }
+
+    @include phone-width {
+      text-align: center;
+    }
   }
+
   &__content {
     margin: 70px 0;
     display: flex;
     justify-content: center;
+
+    @include tablet-width {
+      justify-content: flex-start;
+    }
+
+    @include phone-width {
+      justify-content: center;
+      margin-top: 120px;
+    }
   }
 }
 
@@ -634,6 +1099,17 @@ ul {
   background-color: rgb(255, 255, 255);
   box-shadow: 4px 6.928px 36.72px 14.28px rgba(0, 0, 1, 0.02);
   position: relative;
+
+  @include tablet-width{
+    width: 649px;
+    margin: 0;
+  }
+
+  @include phone-width {
+    width: 290px;
+    height: 565px;
+    padding: 110px 20px 10px;
+  }
 
   &__name {
     font-size: 22px;
@@ -660,7 +1136,12 @@ ul {
     width: 200px;
     height: 190px;
     top: 40px;
-    right: -100px;
+    right: -85px;
+
+    @include phone-width {
+      top: -100px;
+      right: 46px;
+    }
   }
 }
 
