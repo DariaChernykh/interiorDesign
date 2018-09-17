@@ -200,6 +200,10 @@ ul {
       right: 15px;
       top: 25px;
     }
+
+    &__logo-active {
+      display: none;
+    }
   }
 
   &-navigation__list {

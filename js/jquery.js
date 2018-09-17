@@ -10,14 +10,14 @@ $(document).ready(function(){
   });
 
   $(".header-navigation__logo").click(function(){
-    $(this).attr("src", "img/002-cancel.png");
-    $(this).addClass("header-navigation__logo-active");
-    $(".header-navigation__list").show();
+    $(this).fadeOut(1);
+    $(".header-navigation__logo-active").fadeIn(1);
+    $(".header-navigation__list").fadeIn(100);
 
     $(".header-navigation__logo-active").click(function(){
-      $(this).attr("src", "img/002-menu.png");
-      $(this).removeClass("header-navigation__logo-active");
-      $(".header-navigation__list").hide();
+      $(this).fadeOut(1);
+      $(".header-navigation__logo").fadeIn(1);
+      $(".header-navigation__list").fadeOut(100);
     });
   });
 
