@@ -787,8 +787,6 @@ ul {
   position: relative;
   background-size: cover;
   background: url("../img/d-background-image3.jpg") no-repeat;
-  background-color: rgba(17, 37, 55, .6);
-  background-blend-mode: multiply;
 
   font-family: 'Raleway', sans-serif;
   color: rgb(255, 255, 255);
@@ -797,15 +795,11 @@ ul {
   @include tablet-width {
     height: 815px;
     background: url("../img/t-background-image3.jpg") no-repeat;
-    background-color: rgba(17, 37, 55, .6);
-    background-blend-mode: multiply;
   }
 
   @include phone-width {
     height: 622px;
     background: url("../img/p-background-image3.jpg") no-repeat;
-    background-color: rgba(17, 37, 55, .6);
-    background-blend-mode: multiply;
   }
 
   &::before {
